@@ -25,7 +25,6 @@ function makeNewPosition(){
     var nw = Math.floor(Math.random() * w);
 
     return [nh,nw];
-
 }
 
 function calcSpeed(prev, next) {
@@ -54,3 +53,10 @@ function animateDiv(myclass){
       animateDiv(myclass);
     });
 };
+
+const $video = $('video');
+
+  $image.on('click', () => {
+      $video.removeClass('hidden');
+      $image.addClass('hidden');
+    })
