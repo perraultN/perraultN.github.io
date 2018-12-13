@@ -55,8 +55,17 @@ function animateDiv(myclass){
 };
 
 const $video = $('video');
+const $return = $('button');
 
   $image.on('click', () => {
-      $video.removeClass('hidden');
-      $image.addClass('hidden');
+      $image.hide(10000);
+      $video.show(10000);
+      $return.show(10000);
     })
+
+  $return.on('click', () => {
+    $video.hide(10000);
+    $return.hide(10000);
+    $image.show(10000);
+
+  })

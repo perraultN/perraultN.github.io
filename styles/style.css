@@ -12,9 +12,13 @@ h1 {
   text-align: center;
 }
 
-p {
+h2 {
   margin: 0 10vw;
   padding-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
  .size {
@@ -28,15 +32,20 @@ p {
   width: 100%;
 }
 
-div {
-  display: flex;
-  justify-content: center;
-}
 
-video {
-  z-index: 1;
+button {
+   display: block;
+   margin: 5px auto 0;
+   height: 3px;
 }
 
 .hidden {
   display: none;
+}
+
+video {
+  z-index: 1;
+  display: block;
+  width: 500px;
+  margin: 0 auto;;
 }
