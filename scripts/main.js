@@ -54,18 +54,49 @@ function animateDiv(myclass){
     });
 };
 
-const $video = $('video');
+const $videos = $('video');
+
+const $video1 = $('.video1');
+const $video2 = $('.video2');
+const $video3 = $('.video3');
+const $video4 = $('.video4');
+
+const $image1 = $('.a');
+const $image2 = $('.b');
+const $image3 = $('.c');
+const $image4 = $('.d');
+
+const $screenShots = $('.screenShot');
+
 const $return = $('button');
 
-  $image.on('click', () => {
-      $image.hide(10000);
-      $video.show(10000);
+  $image1.on('click', () => {
+      $screenShots.hide(10000);
+      $video1.show(10000);
+      $return.show(10000);
+    })
+
+  $image2.on('click', () => {
+      $screenShots.hide(10000);
+      $video2.show(10000);
+      $return.show(10000);
+    })
+
+  $image3.on('click', () => {
+      $screenShots.hide(10000);
+      $video3.show(10000);
+      $return.show(10000);
+    })
+
+  $image4.on('click', () => {
+      $screenShots.hide(10000);
+      $video4.show(10000);
       $return.show(10000);
     })
 
   $return.on('click', () => {
-    $video.hide(10000);
+    $videos.hide(10000);
     $return.hide(10000);
-    $image.show(10000);
+    $screenShots.show(10000);
 
   })

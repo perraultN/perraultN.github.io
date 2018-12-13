@@ -2,28 +2,26 @@
   box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3em;
-  margin: 0 auto;
-  padding-top: 3vh;
+body {
+  background-color: #f7f7f4;
+}
+
+header img {
+  width: 30%;
+  margin: 0 auto 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
 
-h2 {
-  margin: 0 10vw;
-  padding-bottom: 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+
+ .size1 {
+  width: 15%;
+  position: fixed;
 }
 
- .size {
-  width: 25%;
-
+.size2 {
+  width: 10%;
   position: fixed;
 }
 
@@ -31,7 +29,6 @@ h2 {
   height: 70vh;
   width: 100%;
 }
-
 
 button {
    display: block;
@@ -46,6 +43,13 @@ button {
 video {
   z-index: 1;
   display: block;
-  width: 500px;
   margin: 0 auto;;
+}
+
+.width1 {
+  width: 500px;
+}
+
+.width2 {
+  width: 300px;
 }
