@@ -13,13 +13,14 @@ $(document).ready(function(){
 });
 
 const $container = $('.container');
-const $image = $('img');
+const $size1 = $('.size1');
+const $size2 = $('.size2')
 const $header = $('header');
 
 function makeNewPosition(){
 
-    var h = $container.height() - $image.height();
-    var w = $container.width() - $image.width();
+    var h = $container.height() - $size1.height();
+    var w = $container.width();
 
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
@@ -34,7 +35,7 @@ var y = Math.abs(prev[0] - next[0]);
 
 var greatest = x > y ? x : y;
 
-var speedModifier = 0.03;
+var speedModifier = 0.05;
 
 var speed = Math.ceil(greatest/speedModifier);
 
@@ -68,7 +69,7 @@ const $image4 = $('.d');
 
 const $screenShots = $('.screenShot');
 
-const $return = $('button');
+const $return = $('.button');
 
   $image1.on('click', () => {
       $screenShots.hide(10000);
