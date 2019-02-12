@@ -1,75 +1,56 @@
 $(document).ready(function(){
-   const divClasses = [ '.a', '.b', '.c', '.d' ];
+
+  const divClasses = [ '.a', '.b', '.c', '.d' ];
+  const $container = $('.container');
+  const $size1 = $('.size1');
+  const $size2 = $('.size2')
+  const $videos = $('video');
+  const $video1 = $('.video1');
+  const $video2 = $('.video2');
+  const $video3 = $('.video3');
+  const $video4 = $('.video4');
+  const $image1 = $('.a');
+  const $image2 = $('.b');
+  const $image3 = $('.c');
+  const $image4 = $('.d');
+  const $screenShots = $('.screenShot');
+  const $return = $('.button');
 
   divClasses.forEach(function(element, index) {
-
     setTimeout(function() {
-      const currentClass = $(element);
-      animateDiv(currentClass)
+    const currentClass = $(element);
+    animateDiv(currentClass)
     });
   });
 
+  function makeNewPosition(){
+      var h = $container.height();
+      var w = $container.width();
+      var nh = Math.floor(Math.random() * h);
+      var nw = Math.floor(Math.random() * w);
+      return [nh,nw];
+  };
 
-});
+  function calcSpeed(prev, next) {
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+    var greatest = x > y ? x : y;
+    var speedModifier = 0.05;
+    var speed = Math.ceil(greatest/speedModifier);
+    return speed;
+  };
 
-const $container = $('.container');
-const $size1 = $('.size1');
-const $size2 = $('.size2')
-const $header = $('header');
-
-function makeNewPosition(){
-
-    var h = $container.height() - $size1.height();
-    var w = $container.width();
-
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-
-    return [nh,nw];
-}
-
-function calcSpeed(prev, next) {
-
-var x = Math.abs(prev[1] - next[1]);
-var y = Math.abs(prev[0] - next[0]);
-
-var greatest = x > y ? x : y;
-
-var speedModifier = 0.05;
-
-var speed = Math.ceil(greatest/speedModifier);
-
-return speed;
-
-};
-
-function animateDiv(myclass){
-    var newq = makeNewPosition();
-    var oldq = $('.a').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-    $(myclass).animate(
-      { top: newq[0] + $header.height(), left: newq[1] },
-      speed, 'linear',
-      function(){
-      animateDiv(myclass);
-    });
-};
-
-const $videos = $('video');
-
-const $video1 = $('.video1');
-const $video2 = $('.video2');
-const $video3 = $('.video3');
-const $video4 = $('.video4');
-
-const $image1 = $('.a');
-const $image2 = $('.b');
-const $image3 = $('.c');
-const $image4 = $('.d');
-
-const $screenShots = $('.screenShot');
-
-const $return = $('.button');
+  function animateDiv(myclass){
+      var newq = makeNewPosition();
+      var oldq = $('.a').offset();
+      var speed = calcSpeed([oldq.top, oldq.left], newq);
+      $(myclass).animate(
+        { top: newq[0], left: newq[1] },
+        speed, 'linear',
+        function(){
+        animateDiv(myclass);
+      });
+  };
 
   $image1.on('click', () => {
       $screenShots.hide(10000);
@@ -99,5 +80,6 @@ const $return = $('.button');
     $videos.hide(10000);
     $return.hide(10000);
     $screenShots.show(10000);
-
   })
+
+});
